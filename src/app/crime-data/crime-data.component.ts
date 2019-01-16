@@ -48,13 +48,14 @@ export class CrimeDataComponent implements OnInit {
   ngOnInit() {
     this.http.get('https://data.baltimorecity.gov/resource/59fg-ary5.json').toPromise()
     .then((res:any) => {
-      //console.log('res', res);
       this.crimeData = res;
       this.crimeData.forEach(crime => {
+        // Replacing missing data
         if (crime.weapon === undefined) {
           this.weapons.push(crime.weapon);
           this.weaponCounts.push({ name: 'NA', value: 1});
         }
+        // Adding counts of weapons
         if (!this.weapons.includes(crime.weapon)){
           this.weapons.push(crime.weapon);
           this.weaponCounts.push({ name: crime.weapon, value: 1});
@@ -63,6 +64,7 @@ export class CrimeDataComponent implements OnInit {
           const weapon = this.weaponCounts[index];
           weapon.value += 1;
         }
+        // For time series data, crime with date
         if (!this.dates.includes(crime.crimedate)){
           this.dates.push(crime.crimedate);
           this.dateCounts.push({ name: crime.crimedate, value: 1});
