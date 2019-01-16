@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 10px 30px;
+    align-items: flex-end;
+    background-color: rgba(43, 7, 7, 0.74);
+    color: rgb(253, 235, 235);
+    a {
+        font-size: 20px;
+        font-weight: 500;
+        text-decoration: none;
+        color: rgb(253, 235, 235);
+        padding: 0px 10px;
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    a:active {
+        color: rgb(252, 218, 155);
+    }
+}
+.container {
+    background-color: rgb(241, 237, 237);
+    padding: 50px 50px;
+    height: 100%;
+}

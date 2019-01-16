@@ -1,0 +1,47 @@
+.chart {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    border: 1px solid rgb(202, 202, 202);
+    background-color: white;
+    box-shadow: 3px 3px 5px rgb(247, 229, 197);
+    margin-bottom: 20px;
+    .chart_header {
+        padding: 5px 10px;
+        border-bottom: 1px solid rgb(202, 202, 202);
+    }
+    .chart_body {
+        padding: 5px 10px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        div {
+            display: grid;
+        }
+        .skeleton {
+            div {
+              animation: loading 1.7s infinite linear;
+              background: #f6f7f8;
+              background-image: -webkit-linear-gradient(right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+              background-image: linear-gradient(right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+              background-repeat: no-repeat;
+            }
+            
+            div {
+              height: 300px;
+              width: 100%;
+            }
+          }
+          
+          @keyframes loading {
+            0% {
+              background-position: -300px;
+            }
+          
+            100% {
+              background-position: 500px;
+            }
+          }
+    }
+}

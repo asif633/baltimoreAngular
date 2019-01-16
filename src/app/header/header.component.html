@@ -1,0 +1,9 @@
+<div class="header">
+  <a [routerLink]="['/']">
+    <img src="assets/baltimore_logo.png">
+  </a>
+  <a [routerLink]="['/crime-data']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Crime Data Visualization</a>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

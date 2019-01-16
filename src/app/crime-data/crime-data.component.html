@@ -1,0 +1,59 @@
+<div class="chart">
+  <div class="chart_header">
+    <h4>Crime by weapons</h4>
+  </div>
+  <div class="chart_body">
+    <div class="skeleton" *ngIf="weaponCounts.length === 0">
+      <div></div>
+    </div>
+    <div>
+      <ngx-charts-bar-vertical *ngIf="weaponCounts.length > 0" [view]="view" [scheme]="colorScheme" [results]="weaponCounts"
+        [barPadding]="2" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+        (select)="onSelect($event)">
+      </ngx-charts-bar-vertical>
+    </div>
+    <div>
+      <ngx-charts-pie-chart *ngIf="weaponCounts.length > 0" [view]="view" [scheme]="colorScheme" [results]="weaponCounts"
+        [legend]="false" [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut" [gradient]="gradient"
+        (select)="onSelect($event)">
+      </ngx-charts-pie-chart>
+    </div>
+  </div>
+</div>
+
+<div class="chart">
+  <div class="chart_header">
+    <h4>Crime by date</h4>
+  </div>
+  <div class="chart_body">
+    <div class="skeleton" *ngIf="weaponCounts.length === 0">
+      <div></div>
+    </div>
+    <div>
+      <ngx-charts-bar-vertical *ngIf="dateCounts.length > 0" [view]="[1200, 600]" [results]="dateCounts" [barPadding]="2"
+        [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="dateXAxis" [yAxisLabel]="dateYAxis" (select)="onSelect($event)">
+      </ngx-charts-bar-vertical>
+    </div>
+  </div>
+</div>
+
+
+<div class="chart">
+  <div class="chart_header">
+    <h4>Crime by date</h4>
+  </div>
+  <div class="chart_body">
+    <div class="skeleton" *ngIf="weaponCounts.length === 0">
+      <div></div>
+    </div>
+    <div>
+      <ngx-charts-line-chart *ngIf="dateSeries[0].series.length > 0" [view]="[1200, 600]" [scheme]="colorScheme" [results]="dateSeries"
+        [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="dateXAxis" [yAxisLabel]="dateYAxis" [autoScale]="true"
+        [timeline]="true" (select)="onSelect($event)">
+      </ngx-charts-line-chart>
+    </div>
+  </div>
+</div>
